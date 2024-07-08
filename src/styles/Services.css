@@ -1,0 +1,10 @@
+#services > div {
+  background-color: rgba(215, 215, 215, 0.318);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(215, 215, 215, 0.318);
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+#services-img {
+  width: 40px;
+}
