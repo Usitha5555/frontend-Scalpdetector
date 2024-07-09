@@ -15,7 +15,7 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setValidationErrors([]); // Clear previous validation errors
+    setValidationErrors([]); 
 
     try {
       const response = await axios.post('http://localhost:5000/api/auth/signup', {
@@ -26,7 +26,7 @@ function Signup() {
       });
 
       if (response.status === 201) {
-        navigate('/predictor'); // Navigate to predictor page after successful signup
+        navigate('/predictor'); 
       }
     } catch (err) {
       if (err.response && err.response.data) {
@@ -106,6 +106,7 @@ function Signup() {
       <div className="divider mt-4 mb-2"></div>
       <div className="text-center">
         <p className="mb-1">Already have an account? <Link to="/login">Sign in</Link></p>
+        <p><Link to="/" className="btn btn-link text-muted p-0">Go Back to Home</Link></p>
       </div>
     </div>
   );

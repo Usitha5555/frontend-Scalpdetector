@@ -177,6 +177,7 @@ function Login() {
       <div className="text-center">
         <p className="mb-1">New around here? <Link to="/signup">Sign up</Link></p>
         <p><button className="btn btn-link text-muted p-0" onClick={() => setStep(1)}>Forgot Password?</button></p>
+        <p><Link to="/" className="btn btn-link text-muted p-0">Go Back to Home</Link></p>
       </div>
 
       {step > 0 && (
