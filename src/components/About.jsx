@@ -3,7 +3,7 @@ import aboutImage from "../assets/images/about.png"; // Import your image here
 
 const About = () => {
   return (
-    <section id="about">
+    <section id="about" className="mt-5">
       <div className="container-md">
         <div className="text-center">
           <h2>About Us</h2>

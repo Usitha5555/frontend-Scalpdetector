@@ -147,7 +147,7 @@ const Contact = () => {
                 <textarea
                   id="query"
                   className="form-control"
-                  style={{ width: "26.2vw", height: "140px" }}
+                  style={{ width: "400px", height: "140px" }}
                   name="message"
                   placeholder="Your query..."
                   value={formData.message}

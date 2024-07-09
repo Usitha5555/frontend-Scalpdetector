@@ -3,7 +3,7 @@ import "../styles/Services.css";
 
 const Services = ({ cardImage, cardTitle, cardDesc }) => {
   return (
-    <div className="col-3 p-3">
+    <div className="p-3" style={{ width: "400px" }}>
       <div className="d-flex mb-3">
         <img id="services-img" src={cardImage} className="me-3" />
         <h5>{cardTitle}</h5>

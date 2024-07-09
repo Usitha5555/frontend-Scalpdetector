@@ -3,12 +3,10 @@ import logo from "../assets/images/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-md navbar-light">
-      <div className="container-xxl ps-5">
+    <nav className="navbar navbar-expand-md navbar-light p-2 px-sm-5 px-xxl-0">
+      <div className="container-xxl">
         <a href="#intro" className="navbar-brand">
-          <div className="w-50">
-            <img src={logo} className="img-fluid w-75" alt="" />
-          </div>
+          <img src={logo} className="img-fluid" style={{ width: "180px" }} />
         </a>
         {/* toggle button for mobile nav */}
         <button

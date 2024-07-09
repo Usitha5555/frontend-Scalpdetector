@@ -34,12 +34,10 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
-      <br />
-      <br />
       <About />
       <section
         id="services"
-        className="d-flex justify-content-center gap-2 mb-5"
+        className="d-flex justify-content-center gap-2 mb-5 flex-wrap"
       >
         {data.map(({ cardImage, cardTitle, cardDesc }) => (
           <Services
