@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../assets/images/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './Login.css'; // Ensure you have this CSS file imported
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -40,7 +40,6 @@ function Login() {
   };
 
   const sanitizeInput = (input) => {
-    
     return input.replace(/<.*?>/g, ''); 
   };
 
@@ -183,11 +182,11 @@ function Login() {
       {step > 0 && (
         <div className="modal show d-block">
           <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
+            <div className="modal-content fixed-modal">
               <div className="modal-header">
                 <button type="button" className="btn-close" onClick={closeModal}></button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body d-flex flex-column justify-content-center">
                 {step === 1 && (
                   <form onSubmit={handleForgotPassword} className="text-center">
                     <h5 className="modal-title mb-3">Forgot Password</h5>
@@ -246,7 +245,7 @@ function Login() {
                       />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+                      <label htmlFor="confirmPassword" className="form-label">Confirm New Password</label>
                       <input
                         type="password"
                         className="form-control"
@@ -258,7 +257,7 @@ function Login() {
                       />
                     </div>
                     <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
-                      {loading ? 'Loading...' : 'Create Password'}
+                      {loading ? 'Loading...' : 'Reset Password'}
                     </button>
                     {forgotPasswordError && <div className="alert alert-danger mt-3">{forgotPasswordError}</div>}
                   </form>
@@ -266,8 +265,7 @@ function Login() {
                 {step === 4 && (
                   <div className="text-center">
                     <h5 className="modal-title mb-3">Password Reset Successful</h5>
-                    <p>Your password has been reset successfully. You can now log in with your new password.</p>
-                    <button className="btn btn-primary btn-block" onClick={() => setStep(0)}>Back to Login</button>
+                    <button type="button" className="btn btn-primary" onClick={closeModal}>Close</button>
                   </div>
                 )}
               </div>

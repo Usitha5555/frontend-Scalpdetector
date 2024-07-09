@@ -1,0 +1,35 @@
+.modal-content.fixed-modal {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-title {
+    text-align: center;
+  }
+  
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .btn-block {
+    width: 75%;
+  }
+  
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ddd;
+  }
+  
