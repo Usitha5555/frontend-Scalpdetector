@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImage from "../assets/images/Untitled design.png"; // Import your image here
+import aboutImage from "../assets/images/about.png"; // Import your image here
 
 const About = () => {
   return (
@@ -15,7 +15,8 @@ const About = () => {
         <div className="row my-5 g-5 justify-content-around align-items-center">
           {/* picture grid */}
           <div className="col-6 col-lg-4">
-            <img src={aboutImage} className="img-fluid" alt="About Us" /> {/* Use your image variable */}
+            <img src={aboutImage} className="img-fluid" alt="About Us" />{" "}
+            {/* Use your image variable */}
           </div>
           {/* accordion grid */}
           <div className="col-lg-6">
@@ -44,8 +45,8 @@ const About = () => {
                 >
                   <div className="accordion-body">
                     <p>
-                      HairTreatzz is a team of dedicated professionals, united by
-                      a passion for hair health. With years of experience in
+                      HairTreatzz is a team of dedicated professionals, united
+                      by a passion for hair health. With years of experience in
                       both technology and healthcare, we have developed a
                       cutting-edge platform that leverages machine learning to
                       provide precise hair analysis.

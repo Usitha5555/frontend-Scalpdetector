@@ -9,7 +9,7 @@ const Contact = () => {
     message: "",
   });
   const [errors, setErrors] = useState({});
-  const [messageSent, setMessageSent] = useState(false); 
+  const [messageSent, setMessageSent] = useState(false);
 
   const validate = () => {
     let tempErrors = {};
@@ -58,7 +58,7 @@ const Contact = () => {
           (result) => {
             console.log(result.text);
             console.log("message sent");
-            setMessageSent(true); 
+            setMessageSent(true);
             setFormData({ to_name: "", from_name: "", message: "" });
           },
           (error) => {
@@ -86,13 +86,13 @@ const Contact = () => {
           </div>
         </div>
         <div className="row justify-content-center my-5">
-          <div className="col-lg-12">
+          <div className="d-flex justify-content-center">
             <form ref={form} onSubmit={sendEmail}>
               <label htmlFor="email" className="form-label">
                 Email address:
               </label>
               <div className="mb-4 input-group">
-                <span className="input-group-text">
+                <span className="input-group-text" style={{ height: "37px" }}>
                   <i className="bi bi-envelope-at-fill"></i>
                 </span>
                 <input
@@ -104,15 +104,6 @@ const Contact = () => {
                   value={formData.from_name}
                   onChange={handleChange}
                 />
-                <span className="input-group-text">
-                  <span
-                    className="tt"
-                    data-bs-placement="bottom"
-                    title="Enter an email address to which we can reply to."
-                  >
-                    <i className="bi bi-question text-muted"></i>
-                  </span>
-                </span>
               </div>
               {errors.from_name && (
                 <span className="error">{errors.from_name}</span>
@@ -121,7 +112,7 @@ const Contact = () => {
                 Name:
               </label>
               <div className="mb-4 input-group">
-                <span className="input-group-text">
+                <span className="input-group-text" style={{ height: "38px" }}>
                   <i className="bi bi-person-fill"></i>
                 </span>
                 <input
@@ -133,17 +124,10 @@ const Contact = () => {
                   value={formData.to_name}
                   onChange={handleChange}
                 />
-                <span className="input-group-text">
-                  <span
-                    className="tt"
-                    data-bs-placement="bottom"
-                    title="Enter your first name."
-                  >
-                    <i className="bi bi-question text-muted"></i>
-                  </span>
-                </span>
               </div>
-              {errors.to_name && <span className="error">{errors.to_name}</span>}
+              {errors.to_name && (
+                <span className="error">{errors.to_name}</span>
+              )}
               <label htmlFor="subject" className="form-label">
                 What is your question about?
               </label>
@@ -163,7 +147,7 @@ const Contact = () => {
                 <textarea
                   id="query"
                   className="form-control"
-                  style={{ height: "140px" }}
+                  style={{ width: "26.2vw", height: "140px" }}
                   name="message"
                   placeholder="Your query..."
                   value={formData.message}
@@ -171,7 +155,9 @@ const Contact = () => {
                 ></textarea>
                 <label htmlFor="query">Your query...</label>
               </div>
-              {errors.message && <span className="error">{errors.message}</span>}
+              {errors.message && (
+                <span className="error">{errors.message}</span>
+              )}
               {messageSent && (
                 <p className="text-danger">Message sent successfully!</p>
               )}

@@ -34,9 +34,13 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
-      <br/><br/>
+      <br />
+      <br />
       <About />
-      <section id="services" className="d-flex justify-content-center gap-2">
+      <section
+        id="services"
+        className="d-flex justify-content-center gap-2 mb-5"
+      >
         {data.map(({ cardImage, cardTitle, cardDesc }) => (
           <Services
             cardImage={cardImage}
