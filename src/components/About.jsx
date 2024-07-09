@@ -1,4 +1,5 @@
 import React from "react";
+import aboutImage from "../assets/images/Untitled design.png"; // Import your image here
 
 const About = () => {
   return (
@@ -8,19 +9,19 @@ const About = () => {
           <h2>About Us</h2>
           <p className="lead text-muted">
             Join us on the path to healthier hair and discover the difference
-            that ScalpCare can make in your hair care routine.
+            that HairTreatzz can make in your hair care routine.
           </p>
         </div>
         <div className="row my-5 g-5 justify-content-around align-items-center">
-          {/*  picture grid  */}
+          {/* picture grid */}
           <div className="col-6 col-lg-4">
-            <img src="" className="img-fluid" alt="About Us" />
+            <img src={aboutImage} className="img-fluid" alt="About Us" /> {/* Use your image variable */}
           </div>
-          {/*  accordion grid  */}
+          {/* accordion grid */}
           <div className="col-lg-6">
-            {/*  accordion  */}
+            {/* accordion */}
             <div className="accordion" id="chapters">
-              {/*  who-we-are  */}
+              {/* who-we-are */}
               <div className="accordion-item">
                 <h2 className="accordion-header" id="heading-1">
                   <button
@@ -34,7 +35,7 @@ const About = () => {
                     Who We Are
                   </button>
                 </h2>
-                {/*  div with className 'show' will be shown by default  */}
+                {/* div with className 'show' will be shown by default */}
                 <div
                   className="accordion-collapse collapse show"
                   id="who-we-are"
@@ -43,7 +44,7 @@ const About = () => {
                 >
                   <div className="accordion-body">
                     <p>
-                      ScalpCare is a team of dedicated professionals, united by
+                      HairTreatzz is a team of dedicated professionals, united by
                       a passion for hair health. With years of experience in
                       both technology and healthcare, we have developed a
                       cutting-edge platform that leverages machine learning to
@@ -52,7 +53,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              {/*  our-mission  */}
+              {/* our-mission */}
               <div className="accordion-item">
                 <h2 className="accordion-header" id="heading-2">
                   <button
@@ -74,7 +75,7 @@ const About = () => {
                 >
                   <div className="accordion-body">
                     <p>
-                      At ScalpCare, we are committed to revolutionizing hair
+                      At HairTreatzz, we are committed to revolutionizing hair
                       care through advanced technology. Our mission is to
                       empower individuals with accurate and personalized
                       insights into their hair health, helping them achieve
@@ -83,7 +84,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              {/*  our-vision  */}
+              {/* our-vision */}
               <div className="accordion-item">
                 <h2 className="accordion-header" id="heading-3">
                   <button
@@ -114,23 +115,23 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              {/*  why-choose-scalpcare  */}
+              {/* why-choose-HairTreatzz */}
               <div className="accordion-item">
                 <h2 className="accordion-header" id="heading-4">
                   <button
                     className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#why-choose-scalpcare"
+                    data-bs-target="#why-choose-HairTreatzz"
                     aria-expanded="true"
-                    aria-controls="why-choose-scalpcare"
+                    aria-controls="why-choose-HairTreatzz"
                   >
-                    Why Choose ScalpCare?
+                    Why Choose HairTreatzz?
                   </button>
                 </h2>
                 <div
                   className="accordion-collapse collapse"
-                  id="why-choose-scalpcare"
+                  id="why-choose-HairTreatzz"
                   aria-labelledby="heading-4"
                   data-bs-parent="#chapters"
                 >

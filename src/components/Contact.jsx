@@ -9,7 +9,7 @@ const Contact = () => {
     message: "",
   });
   const [errors, setErrors] = useState({});
-  const [messageSent, setMessageSent] = useState(false); // State for success message
+  const [messageSent, setMessageSent] = useState(false); 
 
   const validate = () => {
     let tempErrors = {};
@@ -58,7 +58,7 @@ const Contact = () => {
           (result) => {
             console.log(result.text);
             console.log("message sent");
-            setMessageSent(true); // Set state to display success message
+            setMessageSent(true); 
             setFormData({ to_name: "", from_name: "", message: "" });
           },
           (error) => {
