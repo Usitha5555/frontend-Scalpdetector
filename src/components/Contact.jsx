@@ -1,22 +1,95 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const [formData, setFormData] = useState({
+    to_name: "",
+    from_name: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [messageSent, setMessageSent] = useState(false); // State for success message
+
+  const validate = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (formData.to_name.trim() === "") {
+      tempErrors["to_name"] = "Name is required";
+      isValid = false;
+    }
+    if (formData.from_name.trim() === "") {
+      tempErrors["from_name"] = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.from_name)) {
+      tempErrors["from_name"] = "Email is not valid";
+      isValid = false;
+    }
+    if (formData.message.trim() === "") {
+      tempErrors["message"] = "Message is required";
+      isValid = false;
+    }
+
+    setErrors(tempErrors);
+    return isValid;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (validate()) {
+      emailjs
+        .sendForm(
+          "service_102uu4q",
+          "template_u65i63u",
+          form.current,
+          "_JsZD5x3lGyim9lqF"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            console.log("message sent");
+            setMessageSent(true); // Set state to display success message
+            setFormData({ to_name: "", from_name: "", message: "" });
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
+
   return (
-    <secion id="contact">
-      <div className="container-lg">
+    <section
+      id="contact"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
+      <div className="container-lg" style={{ maxWidth: "600px" }}>
         <div className="text-center">
           <h2>Get in Touch</h2>
           <div className="lead">
             Questions to ask? Fill out the form to contact me directly...
           </div>
         </div>
-        {/*  contact form  */}
         <div className="row justify-content-center my-5">
-          <div className="col-lg-6">
-            <form>
-              {/*  email  */}
-              <label for="email" className="form-label">
-                Email address:{" "}
+          <div className="col-lg-12">
+            <form ref={form} onSubmit={sendEmail}>
+              <label htmlFor="email" className="form-label">
+                Email address:
               </label>
               <div className="mb-4 input-group">
                 <span className="input-group-text">
@@ -26,9 +99,11 @@ const Contact = () => {
                   type="email"
                   className="form-control"
                   id="email"
+                  name="from_name"
                   placeholder="e.g. mario@example.com"
+                  value={formData.from_name}
+                  onChange={handleChange}
                 />
-                {/*  tooltip  */}
                 <span className="input-group-text">
                   <span
                     className="tt"
@@ -39,10 +114,11 @@ const Contact = () => {
                   </span>
                 </span>
               </div>
-
-              {/*  name  */}
-              <label for="name" className="form-label">
-                Name:{" "}
+              {errors.from_name && (
+                <span className="error">{errors.from_name}</span>
+              )}
+              <label htmlFor="name" className="form-label">
+                Name:
               </label>
               <div className="mb-4 input-group">
                 <span className="input-group-text">
@@ -52,9 +128,11 @@ const Contact = () => {
                   type="text"
                   className="form-control"
                   id="name"
+                  name="to_name"
                   placeholder="e.g. Mario"
+                  value={formData.to_name}
+                  onChange={handleChange}
                 />
-                {/*  tooltip  */}
                 <span className="input-group-text">
                   <span
                     className="tt"
@@ -65,9 +143,8 @@ const Contact = () => {
                   </span>
                 </span>
               </div>
-
-              {/*  query select  */}
-              <label for="subject" className="form-label">
+              {errors.to_name && <span className="error">{errors.to_name}</span>}
+              <label htmlFor="subject" className="form-label">
                 What is your question about?
               </label>
               <div className="mb-4 input-group">
@@ -82,18 +159,22 @@ const Contact = () => {
                   <option value="other">Other query</option>
                 </select>
               </div>
-
-              {/*  query  */}
               <div className="form-floating mt-5 mb-4">
                 <textarea
                   id="query"
                   className="form-control"
                   style={{ height: "140px" }}
+                  name="message"
+                  placeholder="Your query..."
+                  value={formData.message}
+                  onChange={handleChange}
                 ></textarea>
-                <label for="query">Your query...</label>
+                <label htmlFor="query">Your query...</label>
               </div>
-
-              {/*  submit  */}
+              {errors.message && <span className="error">{errors.message}</span>}
+              {messageSent && (
+                <p className="text-danger">Message sent successfully!</p>
+              )}
               <div className="mb-4 text-center">
                 <button className="btn btn-secondary" type="submit">
                   Submit
@@ -103,7 +184,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </secion>
+    </section>
   );
 };
 

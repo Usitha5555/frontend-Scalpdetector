@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,6 +13,9 @@
     "bootstrap": "^5.3.3",
     "browserify-zlib": "^0.2.0",
     "cors": "^2.8.5",
+    "email-js": "^2.0.3",
+    "emailjs": "^4.0.3",
+    "emailjs-com": "^3.2.0",
     "express": "^4.19.2",
     "https-browserify": "^1.0.0",
     "react": "^18.3.1",
