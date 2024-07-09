@@ -21,7 +21,7 @@ function App() {
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route
           path="/predictor"
-          element={authUser ? <Navigate to="/predictor" /> : <Predictor />  }
+          element={authUser ? <Navigate to="/login" /> : <Predictor />  }
         />
       </Routes>
   );

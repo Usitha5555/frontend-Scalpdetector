@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/images/logo.png";
 import {Link} from 'react-router-dom'
-import logout from '../hooks/useLogout'
+// import logout from '../hooks/useLogout'
 
 const Navbar = () => {
   return (
@@ -31,7 +31,7 @@ const Navbar = () => {
               <Link to="/" className="nav-link">Home</Link>
             </li>
             <li className="nav-item">
-              <Link onClick={logout} to="/" className="btn btn-primary">Logout</Link>
+              <Link  to="/" className="btn btn-primary">Logout</Link>
             </li>
           </ul>
         </div>
