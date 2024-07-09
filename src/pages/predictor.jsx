@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Nav2 from '../components/Nav.predictor'
 import './predictor.css'; 
+
 
 function App() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -103,7 +105,10 @@ function App() {
     };
 
     return (
+        <div>
+            <Nav2/>
         <div className="App">
+
             <h1 className="app-title">Image Classifier</h1>
             <div className="image-predict-container">
                 {imagePreview && (
@@ -130,6 +135,7 @@ function App() {
                     )}
                 </div>
             </div>
+        </div>
         </div>
     );
 }
