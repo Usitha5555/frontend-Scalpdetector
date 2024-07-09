@@ -37,7 +37,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item ms-2 d-none d-md-inline">
-              <a href="#contact" className="btn btn-secondary">
+              <a href="#contact" className="btn btn-primary">
                 Contact Us
               </a>
             </li>
